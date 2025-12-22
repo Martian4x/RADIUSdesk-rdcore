@@ -45,14 +45,14 @@ return [
             'driver'        => 'Cake\Database\Driver\Mysql',
             'persistent'    => false,
             'username'      => 'rd',
-            'password'      => 'rd',
+            'password'      => 'DFA!df897#lk',
             'database'      => 'rd',
             // Comment out the line below if you are using PostgreSQL
             ////'encoding' => 'utf8mb4',
          	'encoding'      => 'utf8',
             'timezone'      => 'UTC',
             'cacheMetadata' => true,
-            'log'	        => false,
+            'log'	        => true,
             'url'           => env('DATABASE_URL', null),
         ], 
 

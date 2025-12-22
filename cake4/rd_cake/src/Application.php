@@ -173,7 +173,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                 'username' => 'username',
                 'password' => 'password',
             ],
-            'loginUrl' => '/cake4/rd_cake/dashboard/authenticate.json',
+            'loginUrl' => '/cake4/dashboard/authenticate.json',
         ]);
                 
         $service->loadIdentifier('Authentication.Password', [
