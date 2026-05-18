@@ -45,7 +45,7 @@ return [
             'driver'        => 'Cake\Database\Driver\Mysql',
             'persistent'    => false,
             'username'      => 'rd',
-            'password'      => 'DFA!df897#lk',
+            'password'      => '1*v&ZtVM!2lQrn',
             'database'      => 'rd',
             // Comment out the line below if you are using PostgreSQL
             ////'encoding' => 'utf8mb4',
@@ -55,6 +55,16 @@ return [
             'log'	        => true,
             'url'           => env('DATABASE_URL', null),
         ], 
+
+        // iZone.co.tz remote database connection
+        'bahariweb_izone' => [
+            'className' => 'Cake\Database\Connection',
+            'driver' => 'Cake\Database\Driver\Mysql',
+            'host' => 'bahariweb.com',
+            'username' => 'bahariweb_izone_remote',
+            'password' => 'tDz9dD.5Rf2PM6#V',
+            'database' => 'bahariweb_izone',
+        ],
 
 //==== FOR Postgresql =====
 /*

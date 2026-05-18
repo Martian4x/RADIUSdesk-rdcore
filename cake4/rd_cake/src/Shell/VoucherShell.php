@@ -56,6 +56,14 @@ class VoucherShell extends Shell {
 					}
                     $this->{'Vouchers'}->patchEntity($q_r,$d);
                     $this->{'Vouchers'}->save($q_r);
+
+                    // --- NEW CODE START ---
+                    // Connect to the Radius database and remove the user from radcheck
+                    $conn = ConnectionManager::get('default'); // Ensure 'default' is defined in app_local.php
+                    $conn->execute('DELETE FROM radcheck WHERE username = :u', ['u' => $name]);
+                    $this->out("<warning>Cleaned up radcheck for depleted voucher: $name</warning>");
+                    // --- NEW CODE END ---
+
                 }
             }else{
 				if($time_avail){
@@ -84,6 +92,13 @@ class VoucherShell extends Shell {
                     $d['status']         = 'expired';
                     $this->{'Vouchers'}->patchEntity($q_r,$d);
                     $this->{'Vouchers'}->save($q_r);
+
+                    // --- NEW CODE START ---
+                    // Connect to the Radius database default and remove the user from radcheck
+                    $conn = ConnectionManager::get('default'); // Ensure 'default' is defined in app_local.php
+                    $conn->execute('DELETE FROM radcheck WHERE username = :u', ['u' => $name]);
+                    $this->out("<warning>Cleaned up radcheck for depleted voucher: $name</warning>");
+                    // --- NEW CODE END ---
                 }
             }
         }
